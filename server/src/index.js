@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import analyzeRoutes from './routes/analyze.js';
 
 // Load environment variables
 dotenv.config();
@@ -13,34 +14,59 @@ app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173',
   credentials: true
 }));
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => {
   res.json({ 
     message: 'README Generator API', 
-    version: '1.0.0',
-    phase: 'Phase 1 - Basic Setup Complete'
+    version: '2.0.0',
+    phase: 'Phase 2 - GitHub API Integration',
+    features: [
+      'Repository analysis',
+      'GitHub API integration',
+      'Quality scoring',
+      'File structure analysis'
+    ]
   });
 });
 
 // Health check
 app.get('/health', (req, res) => {
-  res.json({ status: 'OK', timestamp: new Date().toISOString() });
-});
-
-// Placeholder routes for future phases
-app.get('/api/analyze', (req, res) => {
   res.json({ 
-    message: 'Repository analysis endpoint - Coming in Phase 2',
-    phase: 'Phase 2'
+    status: 'OK', 
+    timestamp: new Date().toISOString(),
+    version: '2.0.0',
+    uptime: process.uptime()
   });
 });
 
+// API Routes
+app.use('/api', analyzeRoutes);
+
+// Placeholder for Phase 3
 app.post('/api/generate', (req, res) => {
   res.json({ 
     message: 'README generation endpoint - Coming in Phase 3',
-    phase: 'Phase 3'
+    phase: 'Phase 3 - AI Integration'
+  });
+});
+
+// Error handling middleware
+app.use((error, req, res, next) => {
+  console.error('Server error:', error);
+  res.status(500).json({
+    success: false,
+    error: 'Internal server error'
+  });
+});
+
+// 404 handler
+app.use('*', (req, res) => {
+  res.status(404).json({
+    success: false,
+    error: 'Endpoint not found'
   });
 });
 

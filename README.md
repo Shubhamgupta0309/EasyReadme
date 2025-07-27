@@ -22,25 +22,30 @@ A free AI-powered tool to automatically generate professional README files for G
 ## Development Phases
 
 ### Phase 1: ✅ Project Setup + Basic UI
+
 - Project structure
 - React app with GitHub-like design
 - Homepage with repository input
 
 ### Phase 2: 🔄 Backend + GitHub API
+
 - Express server setup
 - GitHub API integration
 - Repository analysis
 
 ### Phase 3: 🔄 AI Integration
+
 - Gemini AI integration
 - README generation
 - Results page
 
 ### Phase 4: 🔄 Authentication
+
 - Firebase Auth setup
 - Protected features
 
 ### Phase 5: 🔄 Final Polish
+
 - Markdown editor
 - Mobile optimization
 - Error handling
@@ -48,6 +53,7 @@ A free AI-powered tool to automatically generate professional README files for G
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 18+
 - npm or yarn
 - Firebase account
@@ -56,17 +62,20 @@ A free AI-powered tool to automatically generate professional README files for G
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone <your-repo-url>
 cd readme-generator
 ```
 
 2. Install dependencies
+
 ```bash
 npm run install:all
 ```
 
 3. Set up environment variables
+
 ```bash
 # Copy and fill the environment files
 cp server/.env.example server/.env
@@ -74,6 +83,7 @@ cp client/.env.example client/.env
 ```
 
 4. Start development servers
+
 ```bash
 npm run dev
 ```
@@ -81,6 +91,7 @@ npm run dev
 ## Environment Variables
 
 ### Server (.env)
+
 ```
 PORT=5000
 GITHUB_TOKEN=your_github_token
@@ -89,6 +100,7 @@ FIREBASE_ADMIN_SDK=path_to_firebase_admin_sdk.json
 ```
 
 ### Client (.env)
+
 ```
 VITE_API_URL=http://localhost:5000
 VITE_FIREBASE_API_KEY=your_firebase_api_key
