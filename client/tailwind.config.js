@@ -8,17 +8,55 @@ export default {
     extend: {
       colors: {
         github: {
-          bg: '#0d1117',
-          'bg-secondary': '#161b22',
-          'bg-tertiary': '#21262d',
-          border: '#30363d',
-          'text-primary': '#f0f6fc',
-          'text-secondary': '#7d8590',
+          // Background colors (exact GitHub colors)
+          canvas: '#ffffff',
+          'canvas-default': '#ffffff',
+          'canvas-subtle': '#f6f8fa',
+          'canvas-inset': '#f6f8fa',
+          
+          // Border colors
+          border: '#d0d7de',
+          'border-default': '#d0d7de',
+          'border-muted': '#d8dee4',
+          
+          // Text colors
+          text: '#1f2328',
+          'text-primary': '#1f2328',
+          'text-secondary': '#656d76',
           'text-muted': '#656d76',
-          blue: '#58a6ff',
-          'blue-hover': '#4493e2',
-          green: '#3fb950',
-          'green-hover': '#2ea043'
+          
+          // Interactive colors
+          blue: '#0969da',
+          'blue-hover': '#0860ca',
+          green: '#1a7f37',
+          'green-hover': '#116329',
+          
+          // Status colors
+          success: '#1a7f37',
+          'success-emphasis': '#116329',
+          'success-subtle': '#dafbe1',
+          'success-muted': '#1a7f37',
+          
+          danger: '#d1242f',
+          'danger-emphasis': '#a40e26',
+          'danger-subtle': '#ffebe9',
+          'danger-muted': '#d1242f',
+          
+          attention: '#9a6700',
+          'attention-emphasis': '#7d4e00',
+          'attention-subtle': '#fff8c5',
+          'attention-muted': '#9a6700',
+          
+          accent: '#0969da',
+          'accent-emphasis': '#0860ca',
+          'accent-subtle': '#ddf4ff',
+          'accent-muted': '#0969da',
+          
+          // Neutral colors
+          neutral: '#6e7781',
+          'neutral-emphasis': '#656d76',
+          'neutral-muted': '#f6f8fa',
+          'neutral-subtle': '#afb8c1'
         }
       },
       fontFamily: {

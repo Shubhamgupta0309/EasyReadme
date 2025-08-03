@@ -7,11 +7,11 @@ declare module 'react' {
     props: P;
     key: Key | null;
   }
-  
+
   interface ReactPortal extends ReactElement {
     children: ReactNode;
   }
-  
+
   type ReactNode = ReactElement | string | number | ReactFragment | ReactPortal | boolean | null | undefined;
 }
 
@@ -23,7 +23,7 @@ declare global {
     }
     interface ElementAttributesProperty { props: {} }
     interface ElementChildrenAttribute { children: {} }
-    
+
     interface IntrinsicElements {
       [elemName: string]: any;
     }

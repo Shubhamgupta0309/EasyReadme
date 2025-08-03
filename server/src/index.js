@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import analyzeRoutes from './routes/analyze.js';
+import aiRoutes from './routes/ai.js';
 
 // Load environment variables
 dotenv.config();
@@ -19,37 +20,44 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.get('/', (req, res) => {
-  res.json({ 
-    message: 'README Generator API', 
-    version: '2.0.0',
-    phase: 'Phase 2 - GitHub API Integration',
+  res.json({
+    message: 'README Generator API',
+    version: '3.0.0',
+    phase: 'Phase 3 - AI Integration Complete',
     features: [
       'Repository analysis',
       'GitHub API integration',
       'Quality scoring',
-      'File structure analysis'
+      'File structure analysis',
+      'AI-powered README generation',
+      'Multiple template options',
+      'Smart README previews'
     ]
   });
 });
 
 // Health check
 app.get('/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
+  res.json({
+    status: 'OK',
     timestamp: new Date().toISOString(),
-    version: '2.0.0',
-    uptime: process.uptime()
+    version: '3.0.0',
+    uptime: process.uptime(),
+    ai_enabled: process.env.GEMINI_API_KEY ? true : false
   });
 });
 
 // API Routes
 app.use('/api', analyzeRoutes);
+app.use('/api/ai', aiRoutes);
 
-// Placeholder for Phase 3
+// Placeholder for Phase 3 - Now using AI routes
+// Keep for backward compatibility
 app.post('/api/generate', (req, res) => {
-  res.json({ 
-    message: 'README generation endpoint - Coming in Phase 3',
-    phase: 'Phase 3 - AI Integration'
+  res.json({
+    message: 'README generation moved to /api/ai/generate-readme',
+    phase: 'Phase 3 - AI Integration Complete',
+    redirect: '/api/ai/generate-readme'
   });
 });
 
@@ -72,6 +80,4 @@ app.use('*', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📝 README Generator API v1.0.0`);
-  console.log(`🎯 Phase 1: Basic setup complete!`);
 });
