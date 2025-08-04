@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Search, Zap, FileText, Star, AlertCircle } from 'lucide-react'
 import apiService from '../services/api'

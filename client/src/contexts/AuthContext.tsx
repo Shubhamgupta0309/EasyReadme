@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 interface User {
   id: string
@@ -135,7 +135,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 }
 
 export const useAuth = () => {
-  const context = useContext(AuthContext)
+  const context = React.useContext(AuthContext)
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider')
   }

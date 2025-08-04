@@ -1,6 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Github, Star, GitFork, Eye, Calendar, FileText, AlertTriangle, CheckCircle, Download, Copy, Settings, Sparkles, Clock, Zap, Loader2 } from 'lucide-react'
+import { ArrowLeft, Github, Star, GitFork, Eye, FileText, AlertTriangle, CheckCircle, Download, Copy, Settings, Sparkles, Zap, Loader2 } from 'lucide-react'
 import api from '../services/api'
 
 const ResultsPage = () => {
@@ -61,11 +61,11 @@ const ResultsPage = () => {
       setAvailableSections(templates[generationOptions.template].availableOptions)
       
       // Reset generation options to template defaults
-      const defaultOptions = { template: generationOptions.template }
+      const defaultOptions: any = { template: generationOptions.template }
       templates[generationOptions.template].availableOptions.forEach((option: any) => {
         defaultOptions[option.key] = option.default
       })
-      setGenerationOptions(prev => ({ ...prev, ...defaultOptions }))
+      setGenerationOptions((prev: any) => ({ ...prev, ...defaultOptions }))
     }
   }, [generationOptions.template, templates])
 
